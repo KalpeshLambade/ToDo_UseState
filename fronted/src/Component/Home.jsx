@@ -21,7 +21,6 @@ export const Home = () => {
   const delectTodo = (e, i) => {
     let neWtodo = todo;
     neWtodo.splice(i, 1);
-    console.log(neWtodo, "here");
     setTodo(neWtodo);
     setData(""); 
   };
@@ -30,7 +29,7 @@ export const Home = () => {
     let newData = [...todo];
     newData[i] = { todo: data, state: true };
     setTodo(newData);
-    setData("");
+    // setData("");
   };
 
   console.log(todo);
@@ -51,8 +50,8 @@ export const Home = () => {
             ) : (
               <button onClick={() => isClickPending(i, e)}>Pending</button>
             )}
-            {/* <input type="text" onChange={handelAddTodos} />{" "}
-            <button onClick={() => updateTodo(i)}>Update</button> */}
+            <input type="text" onChange={handelAddTodos} />{" "}
+            <button onClick={() => updateTodo(i)}>Update</button>
           </div>
         ))
       ) : (
